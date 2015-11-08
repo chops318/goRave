@@ -1,0 +1,20 @@
+<section data-ng-controller="RavesController" data-ng-init="find()">
+  <div class="page-header">
+    <h1>Raves</h1>
+  </div>
+  <div class="list-group">
+    <a data-ng-repeat="rave in raves" data-ui-sref="raves.view({raveId: rave._id})" class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span data-ng-bind="rave.created | date:'mediumDate'"></span>
+        by
+        <span data-ng-bind="rave.user.displayName"></span>
+      </small>
+      <h4 class="list-group-item-heading" data-ng-bind="rave.title"></h4>
+      <p class="list-group-item-text" data-ng-bind="rave.content"></p>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" data-ng-if="raves.$resolved && !raves.length">
+    No raves yet, why don't you <a data-ui-sref="raves.create">create one</a>?
+  </div>
+</section>
