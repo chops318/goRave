@@ -28,6 +28,13 @@ var RaveSchema = new Schema({
   user: {
     type: Schema.ObjectId,
     ref: 'User'
+  },
+  usability: {
+    type: Number
+  },
+  usabilityForm: {
+    type: String,
+    default: ''
   }
 });
 

@@ -10,7 +10,9 @@ angular.module('raves').controller('RavesController', ['$scope', '$stateParams',
       // Create new Rave object
       var rave = new Raves({
         title: this.title,
-        content: this.content
+        content: this.content,
+        usability: this.usability,
+        usabilityForm: this.usabilityForm
       });
 
       // Redirect after save
